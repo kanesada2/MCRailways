@@ -87,7 +87,7 @@ public class MCRailwaysListener implements Listener {
 						if(item != null && item.hasItemMeta() && item.getItemMeta().hasDisplayName()){
 							for(ItemStack ticket: holder.getInventory().getContents()){
 								if(ticket != null &&ticket.hasItemMeta() && ticket.getItemMeta().hasDisplayName()){
-									if(ticket.getItemMeta().getDisplayName().equalsIgnoreCase(item.getItemMeta().getDisplayName())){
+									if(ticket.getItemMeta().getDisplayName().contains(item.getItemMeta().getDisplayName())){
 										new CheckerResetTask(sign.getLocation(), sign.getLines(), sign.getType()).runTaskLater(plugin, 20);
 										sign.getLocation().getBlock().setType(Material.REDSTONE_BLOCK);
 										break inventoryLoop;
